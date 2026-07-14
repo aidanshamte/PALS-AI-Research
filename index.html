@@ -1,70 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>PALS Research References</title>
+    <title>PALS Research References</title>
 
-<style>
-body{
-    font-family: Arial, Helvetica, sans-serif;
-    background:#f5f7fa;
-    max-width:950px;
-    margin:auto;
-    padding:40px;
-    line-height:1.8;
-    color:#222;
-}
+    <style>
+        :root {
+            --fairfield-red: #c8102e;
+            --dark-red: #8f0d23;
+            --charcoal: #222222;
+            --light-gray: #f3f4f6;
+            --border-gray: #dddddd;
+            --white: #ffffff;
+        }
 
-h1{
-    color:#003366;
-    text-align:center;
-}
+        * {
+            box-sizing: border-box;
+        }
 
-h2{
-    text-align:center;
-    color:#555;
-    font-weight:normal;
-    margin-bottom:40px;
-}
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(135deg, #f7f7f7, #eceff2);
+            color: var(--charcoal);
+            line-height: 1.65;
+        }
 
-.reference{
-    margin-bottom:22px;
-    padding-left:28px;
-    text-indent:-28px;
-}
-</style>
+        .page {
+            max-width: 1050px;
+            margin: 40px auto;
+            background: var(--white);
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 12px 35px rgba(0, 0, 0, 0.12);
+        }
 
+        .school-banner {
+            background: linear-gradient(
+                135deg,
+                var(--dark-red),
+                var(--fairfield-red)
+            );
+            color: var(--white);
+            text-align: center;
+            padding: 24px 30px;
+        }
+
+        .school-banner h1 {
+            margin: 0;
+            font-size: clamp(1.7rem, 4vw, 2.7rem);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .research-header {
+            text-align: center;
+            padding: 34px 45px 28px;
+            background: #fafafa;
+            border-bottom: 5px solid var(--fairfield-red);
+        }
+
+        .research-header h2 {
+            margin: 0 auto 18px;
+            max-width: 930px;
+            font-size: clamp(1.35rem, 3vw, 2rem);
+            line-height: 1.25;
+            text-transform: uppercase;
+            color: #111111;
+        }
+
+        .authors {
+            margin: 8px 0;
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .advisor {
+            margin: 5px 0 0;
+            font-size: 1rem;
+            color: #555555;
+        }
+
+        main {
+            padding: 38px 50px 50px;
+        }
+
+        .section-heading {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 24px;
+        }
+
+        .section-heading::before {
+            content: "";
+            width: 7px;
+            height: 36px;
+            background: var(--fairfield-red);
+            border-radius: 4px;
+        }
+
+        .section-heading h3 {
+            margin: 0;
+            font-size: 1.7rem;
+            color: var(--dark-red);
+        }
+
+        .intro {
+            background: var(--light-gray);
+            border-left: 5px solid var(--fairfield-red);
+            padding: 18px 22px;
+            margin-bottom: 28px;
+            border-radius: 6px;
+        }
+
+        .references {
+            display: grid;
+            gap: 18px;
+        }
+
+        .reference {
+            background: var(--white);
+            border: 1px solid var(--border-gray);
+            border-left: 6px solid var(--fairfield-red);
+            border-radius: 8px;
+            padding: 18px 22px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .reference:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 7px 18px rgba(0, 0, 0, 0.09);
+        }
+
+        .ref-number {
+            display: inline-block;
+            margin-right: 8px;
+            color: var(--fairfield-red);
+            font-weight: 700;
+        }
+
+        a {
+            color: var(--dark-red);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        footer {
+            background: #202020;
+            color: #eeeeee;
+            text-align: center;
+            padding: 22px;
+            font-size: 0.92rem;
+        }
+
+        footer strong {
+            color: var(--white);
+        }
+
+        @media (max-width: 700px) {
+            .page {
+                margin: 0;
+                border-radius: 0;
+            }
+
+            main {
+                padding: 28px 20px 38px;
+            }
+
+            .research-header {
+                padding: 28px 20px;
+            }
+
+            .school-banner {
+                padding: 20px 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<h1>References</h1>
+<div class="page">
 
-<h2>
-Supplementary references for the research poster:<br>
-<b>Analyzing Student Programming Behavior in an AI-Assisted Learning Environment</b>
-</h2>
+    <header>
+        <div class="school-banner">
+            <h1>School of Engineering &amp; Computing</h1>
+        </div>
 
-<div class="reference">
-[1] O. Hazzan, N. Ragonis, and T. Lapidot, “Computer Science Education in the GenAI Era,” in <i>Guide to Teaching Computer Science: An Activity-Based Approach</i>, O. Hazzan, N. Ragonis, and T. Lapidot, Eds. Cham: Springer Nature Switzerland, 2026, pp. 37–65. doi: 10.1007/978-3-032-00953-1_3.
-</div>
+        <div class="research-header">
+            <h2>
+                Enhancing Computer Science Undergraduate Student Learning
+                and Engagement Using an AI-Based Adaptive Learning Platform
+            </h2>
 
-<div class="reference">
-[2] M. P.-C. Lin, G. Jhajj, O. Lin, E. Poitras, D. Chang, and J. Ryoo, <i>Generative AI’s Role in Computer Science Classrooms: A Rapid Mapping Review</i>. 2026, p. 231. doi: 10.22492/issn.2760-7259.2026.20.
-</div>
+            <p class="authors">
+                Sofia Morgillo (Computer Science) &nbsp;|&nbsp;
+                Aidan Shamte (Computer Science, Mechatronics Engineering)
+            </p>
 
-<div class="reference">
-[3] R. Liu, C. Zenke, C. Liu, A. Holmes, P. Thornton, and D. J. Malan, “Teaching CS50 with AI: Leveraging Generative Artificial Intelligence in Computer Science Education,” in <i>Proceedings of the 55th ACM Technical Symposium on Computer Science Education (SIGCSE 2024)</i>. New York, NY, USA: Association for Computing Machinery, 2024, pp. 750–756. doi: 10.1145/3626252.3630938.
-</div>
+            <p class="advisor">
+                Advisor: Professor Dr. Danushka Bandara
+            </p>
+        </div>
+    </header>
 
-<div class="reference">
-[4] A. Létourneau, M. Deslandes Martineau, P. Charland, J. A. Karran, J. Boasen, and P. M. Léger, “A systematic review of AI-driven intelligent tutoring systems (ITS) in K-12 education,” <i>NPJ Science of Learning</i>, vol. 10, p. 29, 2025.
-</div>
+    <main>
+        <div class="section-heading">
+            <h3>Research References</h3>
+        </div>
 
-<div class="reference">
-[5] S. Elnaffar, F. Rashidi, and A. Z. Abualkishik, “Teaching with AI: A Systematic Review of Chatbots, Generative Tools, and Tutoring Systems in Programming Education,” <i>International Journal of Learning, Teaching and Educational Research</i>, vol. 25, no. 1, pp. 1–28, Jan. 2026.
+        <div class="intro">
+            This page contains the complete references supporting the PALS
+            research poster on AI-assisted programming education, intelligent
+            tutoring systems, and student learning behavior.
+        </div>
+
+        <div class="references">
+
+            <div class="reference">
+                <span class="ref-number">[1]</span>
+                O. Hazzan, N. Ragonis, and T. Lapidot,
+                “Computer Science Education in the GenAI Era,” in
+                <i>Guide to Teaching Computer Science: An Activity-Based Approach</i>,
+                O. Hazzan, N. Ragonis, and T. Lapidot, Eds.
+                Cham: Springer Nature Switzerland, 2026, pp. 37–65.
+                <a href="https://doi.org/10.1007/978-3-032-00953-1_3">
+                    doi: 10.1007/978-3-032-00953-1_3
+                </a>.
+            </div>
+
+            <div class="reference">
+                <span class="ref-number">[2]</span>
+                M. P.-C. Lin, G. Jhajj, O. Lin, E. Poitras, D. Chang,
+                and J. Ryoo,
+                <i>Generative AI’s Role in Computer Science Classrooms:
+                A Rapid Mapping Review</i>.
+                2026, p. 231.
+                <a href="https://doi.org/10.22492/issn.2760-7259.2026.20">
+                    doi: 10.22492/issn.2760-7259.2026.20
+                </a>.
+            </div>
+
+            <div class="reference">
+                <span class="ref-number">[3]</span>
+                R. Liu, C. Zenke, C. Liu, A. Holmes, P. Thornton,
+                and D. J. Malan,
+                “Teaching CS50 with AI: Leveraging Generative Artificial
+                Intelligence in Computer Science Education,” in
+                <i>Proceedings of the 55th ACM Technical Symposium on
+                Computer Science Education, Vol. 1</i>,
+                New York, NY, USA: Association for Computing Machinery,
+                2024, pp. 750–756.
+                <a href="https://doi.org/10.1145/3626252.3630938">
+                    doi: 10.1145/3626252.3630938
+                </a>.
+            </div>
+
+            <div class="reference">
+                <span class="ref-number">[4]</span>
+                A. Létourneau, M. Deslandes Martineau, P. Charland,
+                J. A. Karran, J. Boasen, and P. M. Léger,
+                “A systematic review of AI-driven intelligent tutoring systems
+                (ITS) in K-12 education,”
+                <i>NPJ Science of Learning</i>, vol. 10, p. 29, 2025.
+                <a href="https://doi.org/10.1038/s41539-025-00320-7">
+                    doi: 10.1038/s41539-025-00320-7
+                </a>.
+            </div>
+
+            <div class="reference">
+                <span class="ref-number">[5]</span>
+                S. Elnaffar, F. Rashidi, and A. Z. Abualkishik,
+                “Teaching with AI: A Systematic Review of Chatbots,
+                Generative Tools, and Tutoring Systems in Programming Education,”
+                <i>International Journal of Learning, Teaching and Educational Research</i>,
+                vol. 25, no. 1, pp. 1–28, Jan. 2026.
+                <a href="https://doi.org/10.26803/ijlter.25.1.1">
+                    doi: 10.26803/ijlter.25.1.1
+                </a>.
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <strong>Fairfield University</strong><br>
+        Personalized AI Learning System (PALS) Research
+    </footer>
+
 </div>
 
 </body>
